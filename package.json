@@ -1,8 +1,14 @@
 {
-	"name": "project",
-	"private": true,
-	"version": "0.0.0",
+	"name": "layblu-ui",
+	"version": "1.0.0",
+	"description": "Container of components code in base at CSS, HTML y JavaScript",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/pana9422/layblu.git"
+	},
+	"author": "Miguel J Medina<pana9422@gmail.com> (https://miguel-medina.dev/)",
 	"type": "module",
+	"private": true,
 	"scripts": {
 		"dev": "cross-env QENV=development vite",
 		"build": "cross-env QENV=production tsc && vite build",

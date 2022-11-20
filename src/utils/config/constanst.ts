@@ -24,7 +24,7 @@ export const IS_DARK: boolean = matchMedia(
 ).matches
 
 export const PREFERENCES_DEFAULT = (): IPreferences => {
-	const local = localStorage.getItem(`${KEY_LOCAL_STORAGE}_preferences`) ?? ''
+	const local = localStorage.getItem(`${KEY_LOCAL_STORAGE}_preferences`) ?? '{}'
 	const preference = JSON.parse(local) as IPreferences
 	return {
 		theme: preference?.theme ?? (IS_DARK ? 'dark' : 'light'),

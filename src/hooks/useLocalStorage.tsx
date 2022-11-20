@@ -12,7 +12,7 @@ export const useLocalStorage = <T,>(
 
 	const [storedValue, setStoredValue] = useState<T | undefined>(() => {
 		try {
-			return JSON.parse(localStorage.getItem(kls) ?? '') as T
+			return JSON.parse(localStorage.getItem(kls) ?? '{}') as T
 		} catch (error) {
 			return initValue
 		}

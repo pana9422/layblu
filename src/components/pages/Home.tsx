@@ -4,10 +4,17 @@ import { t } from '@/i18n'
 import { IHome } from '@/i18n/types'
 import { useContext } from 'react'
 import { PreferenceContext } from '@/context/Preferences'
+import { useFecth } from '@/hooks/useFetch'
 
+interface IUser {
+	id: string
+	name: string
+}
 const HomePage = () => {
 	const { title } = t<IHome>('home')
 	const { state } = useContext(PreferenceContext)
+	const { data, loading } = useFecth<IUser[]>({ path: 'users' })
+	const users = data ?? []
 	return (
 		<div
 			className={
@@ -18,6 +25,11 @@ const HomePage = () => {
 			<h1 className='text-4xl'>{title}</h1>
 			<div>
 				<FontAwesomeIcon icon={faGlobe} />
+				<ul>
+					{loading
+						? 'Loading...'
+						: users.map(item => <li key={item.id}> {item.name} </li>)}
+				</ul>
 			</div>
 		</div>
 	)

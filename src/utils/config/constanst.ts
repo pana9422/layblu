@@ -31,3 +31,5 @@ export const PREFERENCES_DEFAULT = (): IPreferences => {
 		language: preference?.language ?? navigator.language,
 	}
 }
+
+export const API_URL: string = 'https://jsonplaceholder.typicode.com'

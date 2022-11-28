@@ -1,10 +1,10 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faGlobe } from '@fortawesome/free-solid-svg-icons'
 import { t } from '@/i18n'
 import { IHome } from '@/i18n/types'
 import { useContext } from 'react'
 import { PreferenceContext } from '@/context/Preferences'
 import { useFecth } from '@/hooks/useFetch'
+import Icon from '../atoms/Icon/Icon'
 
 interface IUser {
 	id: string
@@ -24,7 +24,8 @@ const HomePage = () => {
 		>
 			<h1 className='text-4xl'>{title}</h1>
 			<div>
-				<FontAwesomeIcon icon={faGlobe} />
+				<Icon icon={faGlobe} size='sm' color='red' />
+				<Icon svg={true} src='/layblu.svg' />
 				<ul>
 					{loading
 						? 'Loading...'

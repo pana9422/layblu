@@ -1,10 +1,10 @@
 import { IconProp, SizeProp } from '@fortawesome/fontawesome-svg-core'
 
-export interface IIconProps {
+export interface Props {
 	name?: string
 	svg?: boolean
 	src?: string
 	icon?: IconProp
-	size?: SizeProp
+	size?: SizeProp | string
 	color?: string
 }

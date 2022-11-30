@@ -25,7 +25,7 @@ const HomePage = () => {
 			<h1 className='text-4xl'>{title}</h1>
 			<div>
 				<Icon icon={faGlobe} size='sm' color='red' />
-				<Icon svg={true} src='/layblu.svg' />
+				<Icon svg={true} name='IosShare' color='blue' />
 				<ul>
 					{loading
 						? 'Loading...'

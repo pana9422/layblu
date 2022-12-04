@@ -3,8 +3,8 @@ import { Props } from './types'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const iconModules = {
-	Checkbox: lazy(() => import('./repo/Checkbox')),
-	IosShare: lazy(() => import('./repo/IosShare')),
+	Checkbox: lazy(async () => await import('./repo/Checkbox')),
+	IosShare: lazy(async () => await import('./repo/IosShare')),
 }
 
 export function Icon({ icon, svg, size = '20', color = 'inherit' }: Props) {

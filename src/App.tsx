@@ -5,8 +5,7 @@ import { LANGUAGES } from '@/config/constanst'
 import { IAbout, IHome, TExample } from '@/i18n/types'
 import { PreferenceContext } from '@/context/Preferences'
 import { useContext } from 'react'
-import Button from '@/atoms/Button/Button'
-
+import { Button } from '@/components/atoms'
 const App = () => {
 	const { state, toggleLanguage, toggleTheme } = useContext(PreferenceContext)
 

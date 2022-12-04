@@ -4,7 +4,8 @@ import { IHome } from '@/i18n/types'
 import { useContext } from 'react'
 import { PreferenceContext } from '@/context/Preferences'
 import { useFecth } from '@/hooks/useFetch'
-import Icon from '../atoms/Icon/Icon'
+import { Icon } from '@/components/atoms'
+import { EIcon } from '@/types'
 
 interface IUser {
 	id: string
@@ -25,7 +26,7 @@ const HomePage = () => {
 			<h1 className='text-4xl'>{title}</h1>
 			<div>
 				<Icon icon={faGlobe} size='sm' color='red' />
-				<Icon svg={true} name='IosShare' color='blue' />
+				<Icon svg={EIcon.IosShare} color='blue' />
 				<ul>
 					{loading
 						? 'Loading...'

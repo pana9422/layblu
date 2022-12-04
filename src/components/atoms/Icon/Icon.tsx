@@ -7,36 +7,30 @@ const iconModules = {
 	IosShare: lazy(() => import('./repo/IosShare')),
 }
 
-// const REPO_ICONS: Array<string> = ['Checkbox', 'IosShare']
-
-export default function Icon({
-	icon,
-	name,
-	svg = false,
-	src = '',
-	size = 'lg',
-	color = 'inherit',
-}: Props) {
-	// const ToRender = iconModules[name]
-
-	function renderIcon(color: string) {
-		if (name) {
-			const IconToRender = iconModules[name]
-			return <IconToRender fill={color} />
-		}
-
-		return <svg></svg>
+export function Icon({ icon, svg, size = '20', color = 'inherit' }: Props) {
+	if (svg !== undefined) {
+		const IconToRender = iconModules[svg]
+		return (
+			<Suspense fallback={null}>
+				<IconToRender
+					fill={color}
+					viewBox='0 0 48 48'
+					width={size}
+					height={size}
+				/>
+			</Suspense>
+		)
 	}
 
-	return svg ? (
-		<Suspense fallback={null}>{renderIcon(color)}</Suspense>
-	) : icon ? (
-		<FontAwesomeIcon
-			icon={icon}
-			size={typeof size === 'string' ? undefined : size}
-			style={{ color }}
-		/>
-	) : (
-		<span>Icon</span>
-	)
+	if (icon !== undefined) {
+		return (
+			<FontAwesomeIcon
+				icon={icon}
+				size={typeof size !== 'string' ? size : undefined}
+				color={color}
+			/>
+		)
+	}
+
+	return <svg></svg>
 }

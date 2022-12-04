@@ -1,6 +1,11 @@
 import { IButtonProps } from './types'
 
-const Button = ({ label, onClick, active = false, imgSrc }: IButtonProps) => {
+export const Button = ({
+	label,
+	onClick,
+	active = false,
+	imgSrc,
+}: IButtonProps) => {
 	return (
 		<button
 			className={
@@ -15,5 +20,3 @@ const Button = ({ label, onClick, active = false, imgSrc }: IButtonProps) => {
 		</button>
 	)
 }
-
-export default Button

@@ -11,3 +11,8 @@ export interface IPreferences {
 	theme: string
 	language: string
 }
+
+export enum EIcon {
+	Checkbox = 'Checkbox',
+	IosShare = 'IosShare',
+}

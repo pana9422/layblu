@@ -16,3 +16,9 @@ export enum EIcon {
 	Checkbox = 'Checkbox',
 	IosShare = 'IosShare',
 }
+
+export enum EAvatarTypes {
+  circle = 'circle',
+  square = 'square',
+  rounded = 'rounded'
+}

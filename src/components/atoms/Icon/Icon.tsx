@@ -8,7 +8,7 @@ const iconModules = {
 	IosShare: lazy(async () => await import('./repo/IosShare')),
 }
 
-export function Icon({ icon, svg, size, color = 'inherit' }: Props) {
+export const Icon = ({ icon, svg, size, color = 'inherit' }: Props) => {
 	if (svg !== undefined) {
 		const IconToRender = iconModules[svg]
 		return (

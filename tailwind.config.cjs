@@ -5,4 +5,10 @@ module.exports = {
 		extend: {},
 	},
 	plugins: [],
+	safelist: [
+		{ pattern: /bg-\w+-\d+/ },
+		{ pattern: /w-\d+/ },
+		{ pattern: /h-\d+/ },
+		{ pattern: /text-\w+/ },
+	],
 }

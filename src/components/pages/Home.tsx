@@ -4,8 +4,8 @@ import { IHome } from '@/i18n/types'
 import { useContext } from 'react'
 import { PreferenceContext } from '@/context/Preferences'
 import { useFecth } from '@/hooks/useFetch'
-import { Icon } from '@/components/atoms'
-import { EIcon } from '@/types'
+import { Icon, Avatar } from '@/components/atoms'
+import { EIcon, EAvatarTypes } from '@/types'
 
 interface IUser {
 	id: string
@@ -27,6 +27,43 @@ const HomePage = () => {
 			<div>
 				<Icon icon={faGlobe} size='4x' color='red' />
 				<Icon svg={EIcon.IosShare} color='blue' size='30' />
+
+				<Avatar
+					type={EAvatarTypes.circle}
+					size={14}
+					color='teal-500'
+					content={{
+						type: 'icon',
+						data: <Icon icon={faGlobe} size='xl' color='green' />,
+					}}
+				/>
+
+				<Avatar
+					type={EAvatarTypes.rounded}
+					content={{ type: 'text', data: 'virtual dOM' }}
+					color='red-500'
+					size={14}
+					fontSize='xl'
+				/>
+				<Avatar
+					type={EAvatarTypes.circle}
+					content={{
+						type: 'img',
+						data: 'https://gravatar.com/avatar/d82a570e652035daf948801b94eb0140?s=200&d=robohash&r=g',
+					}}
+					color='green-600'
+					size={14}
+				/>
+
+				<Avatar
+					type={EAvatarTypes.square}
+					content={{
+						type: 'img',
+						data: 'https://picsum.photos/200',
+					}}
+					color='blue-100'
+					size={20}
+				/>
 				<ul>
 					{loading
 						? 'Loading...'

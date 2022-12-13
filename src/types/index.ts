@@ -18,7 +18,7 @@ export enum EIcon {
 }
 
 export enum EAvatarTypes {
-  circle = 'circle',
-  square = 'square',
-  rounded = 'rounded'
+	circle = 'circle',
+	square = 'square',
+	rounded = 'rounded',
 }

@@ -1,14 +1,15 @@
-import { EAvatarTypes } from '@/types'
+type TAvatarTypes = 'rounded-full' | 'rounded-none' | 'rounded'
 
-export interface Content {
+type Content = {
 	type: 'img' | 'icon' | 'text'
 	data: string | JSX.Element
 }
 
 export interface Props {
-	type: EAvatarTypes
+	type: TAvatarTypes
 	size?: number
+	numberOfLetters?: number
 	content: Content
-	color?: string
+	bgColor?: string
 	fontSize?: string
 }

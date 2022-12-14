@@ -5,7 +5,7 @@ import { useContext } from 'react'
 import { PreferenceContext } from '@/context/Preferences'
 import { useFecth } from '@/hooks/useFetch'
 import { Icon, Avatar } from '@/components/atoms'
-import { EIcon, EAvatarTypes } from '@/types'
+import { EIcon } from '@/types'
 
 interface IUser {
 	id: string
@@ -29,9 +29,9 @@ const HomePage = () => {
 				<Icon svg={EIcon.IosShare} color='blue' size='30' />
 
 				<Avatar
-					type={EAvatarTypes.circle}
+					type='rounded'
 					size={14}
-					color='teal-500'
+					bgColor='teal-500'
 					content={{
 						type: 'icon',
 						data: <Icon icon={faGlobe} size='xl' color='green' />,
@@ -39,29 +39,33 @@ const HomePage = () => {
 				/>
 
 				<Avatar
-					type={EAvatarTypes.rounded}
-					content={{ type: 'text', data: 'virtual dOM' }}
-					color='red-500'
+					type='rounded-full'
+					content={{
+						type: 'text',
+						data: 'this is a long name',
+					}}
+					numberOfLetters={3}
+					bgColor='red-500'
 					size={14}
 					fontSize='xl'
 				/>
 				<Avatar
-					type={EAvatarTypes.circle}
+					type='rounded'
 					content={{
 						type: 'img',
 						data: 'https://gravatar.com/avatar/d82a570e652035daf948801b94eb0140?s=200&d=robohash&r=g',
 					}}
-					color='green-600'
+					bgColor='green-600'
 					size={14}
 				/>
 
 				<Avatar
-					type={EAvatarTypes.square}
+					type='rounded-none'
 					content={{
 						type: 'img',
 						data: 'https://picsum.photos/200',
 					}}
-					color='blue-100'
+					bgColor='blue-100'
 					size={20}
 				/>
 				<ul>

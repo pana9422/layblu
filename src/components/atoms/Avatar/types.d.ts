@@ -1,8 +1,11 @@
 type TAvatarTypes = 'rounded-full' | 'rounded-none' | 'rounded'
 
 type Content = {
-	type: 'img' | 'icon' | 'text'
-	data: string | JSX.Element
+	type: 'img'  | 'text'
+	data: string 
+} | {
+  type: 'icon'
+  data: JSX.Element
 }
 
 export interface Props {

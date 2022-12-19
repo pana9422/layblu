@@ -3,10 +3,6 @@ import { Props } from './types'
 /* UTILITIES */
 
 const getNameInitials = (data: string, numberOfLetters = 2) => {
-	if (typeof data !== 'string') {
-		console.error("Only pass text to Avatars of type 'text'!!")
-		return
-	}
 	// Divide by words and returns the first letter of each word
 	const dividedString = data.split(' ').map(s => s[0])
 	// Joins each value in a string and returns it in uppercase
@@ -23,19 +19,18 @@ export const Avatar = ({
 	fontSize,
 	numberOfLetters,
 }: Props) => {
+	const font = fontSize !== undefined ? `text-${fontSize}` : ''
+
 	return (
 		<div
-			className={`flex justify-center items-center overflow-hidden ${type} w-${size} h-${size} bg-${bgColor} ${
-				fontSize !== undefined ? `text-${fontSize}` : ''
-			}`}
+			className={`flex justify-center items-center overflow-hidden ${type} w-${size} h-${size} bg-${bgColor} ${font}`}
 		>
-			{content.type === 'img' ? (
-				<img src={content.data as string} />
-			) : content.type === 'text' ? (
-				getNameInitials(content.data as string, numberOfLetters)
-			) : (
-				content.data
-			)}
+			{content.type === 'icon' && content.data}
+
+			{content.type === 'img' && <img src={content.data as string} />}
+
+			{content.type === 'text' &&
+				getNameInitials(content.data as string, numberOfLetters)}
 		</div>
 	)
 }

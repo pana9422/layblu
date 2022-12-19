@@ -27,10 +27,10 @@ export const Avatar = ({
 		>
 			{content.type === 'icon' && content.data}
 
-			{content.type === 'img' && <img src={content.data as string} />}
+			{content.type === 'img' && <img src={content.data} />}
 
 			{content.type === 'text' &&
-				getNameInitials(content.data as string, numberOfLetters)}
+				getNameInitials(content.data, numberOfLetters)}
 		</div>
 	)
 }

@@ -4,7 +4,7 @@ import { IHome } from '@/i18n/types'
 import { useContext } from 'react'
 import { PreferenceContext } from '@/context/Preferences'
 import { useFecth } from '@/hooks/useFetch'
-import { Icon } from '@/components/atoms'
+import { Icon, Avatar } from '@/components/atoms'
 import { EIcon } from '@/types'
 
 interface IUser {
@@ -27,6 +27,47 @@ const HomePage = () => {
 			<div>
 				<Icon icon={faGlobe} size='4x' color='red' />
 				<Icon svg={EIcon.IosShare} color='blue' size='30' />
+
+				<Avatar
+					type='rounded'
+					size={14}
+					bgColor='teal-500'
+					content={{
+						type: 'icon',
+						data: <Icon icon={faGlobe} size='xl' color='green' />,
+					}}
+				/>
+
+				<Avatar
+					type='rounded-full'
+					content={{
+						type: 'text',
+						data: 'this is a long name',
+					}}
+					numberOfLetters={3}
+					bgColor='red-500'
+					size={14}
+					fontSize='xl'
+				/>
+				<Avatar
+					type='rounded'
+					content={{
+						type: 'img',
+						data: 'https://gravatar.com/avatar/d82a570e652035daf948801b94eb0140?s=200&d=robohash&r=g',
+					}}
+					bgColor='green-600'
+					size={14}
+				/>
+
+				<Avatar
+					type='rounded-none'
+					content={{
+						type: 'img',
+						data: 'https://picsum.photos/200',
+					}}
+					bgColor='blue-100'
+					size={20}
+				/>
 				<ul>
 					{loading
 						? 'Loading...'

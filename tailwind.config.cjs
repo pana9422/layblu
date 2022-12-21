@@ -10,5 +10,6 @@ module.exports = {
 		{ pattern: /w-\d+/ },
 		{ pattern: /h-\d+/ },
 		{ pattern: /text-\w+/ },
+		{ pattern: /fill-\w+/ },
 	],
 }

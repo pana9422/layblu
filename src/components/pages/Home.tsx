@@ -4,7 +4,7 @@ import { IHome } from '@/i18n/types'
 import { useContext } from 'react'
 import { PreferenceContext } from '@/context/Preferences'
 import { useFecth } from '@/hooks/useFetch'
-import { Icon, Avatar } from '@/components/atoms'
+import { Icon, Avatar, Chip } from '@/components/atoms'
 import { EIcon } from '@/types'
 
 interface IUser {
@@ -25,6 +25,32 @@ const HomePage = () => {
 		>
 			<h1 className='text-4xl'>{title}</h1>
 			<div>
+				<div>
+					<Chip design='rounded-full' text='react' before='1' />
+					<Chip design='rounded' text='preact' />
+					<Chip
+						design='rounded-full'
+						text='Idk'
+						before='1'
+						isCloseBtn={false}
+					/>
+					<Chip design='rounded-full' text='important tag' isCloseBtn={false} />
+					<Chip
+						design='rounded-full'
+						text='weird'
+						before={
+							<Avatar
+								type='rounded-full'
+								content={{
+									type: 'icon',
+									data: <Icon icon={faGlobe} size='xl' color='green' />,
+								}}
+								bgColor='blue-100'
+								size={6}
+							/>
+						}
+					/>
+				</div>
 				<Icon icon={faGlobe} size='4x' color='red' />
 				<Icon svg={EIcon.IosShare} color='blue' size='30' />
 

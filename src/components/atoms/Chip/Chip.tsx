@@ -1,15 +1,16 @@
 import { Props } from './types'
 
 export const Chip = ({
-	design = 'rounded-full',
+	square = false,
 	color = 'indigo-600',
 	bgColor = 'indigo-50',
 	text,
 	fontWeight = 'font-bold',
 	before = false,
-	isCloseBtn = true,
+	hideCloseBtn = false,
 }: Props) => {
 	const padding = `${before === false ? 'pl-2' : ''} pr-2`
+	const design = square ? 'rounded' : 'rounded-full'
 
 	return (
 		<div
@@ -29,7 +30,7 @@ export const Chip = ({
 
 			<span className={`text-${color}`}>{text}</span>
 
-			{isCloseBtn === true && (
+			{hideCloseBtn === false && (
 				<button className={`${design}`}>
 					<svg
 						className={`fill-${bgColor} bg-${color} rounded-full p-0.5`}

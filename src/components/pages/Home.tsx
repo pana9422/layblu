@@ -26,17 +26,11 @@ const HomePage = () => {
 			<h1 className='text-4xl'>{title}</h1>
 			<div>
 				<div>
-					<Chip design='rounded-full' text='react' before='1' />
-					<Chip design='rounded' text='preact' />
+					<Chip text='react' before='1' />
+					<Chip square text='preact' />
+					<Chip text='Idk' before='1' hideCloseBtn={true} />
+					<Chip text='important tag' hideCloseBtn={true} />
 					<Chip
-						design='rounded-full'
-						text='Idk'
-						before='1'
-						isCloseBtn={false}
-					/>
-					<Chip design='rounded-full' text='important tag' isCloseBtn={false} />
-					<Chip
-						design='rounded-full'
 						text='weird'
 						before={
 							<Avatar

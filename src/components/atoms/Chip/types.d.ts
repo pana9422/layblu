@@ -1,9 +1,9 @@
-export type Props = {
+export interface Props {
 	text: string
 	fontWeight?: string
 	before?: JSX.Element | string | false
-	isCloseBtn?: boolean
-	design?: 'rounded' | 'rounded-full'
+	hideCloseBtn?: boolean
+	square?: boolean
 	color?: string
 	bgColor?: string
 }

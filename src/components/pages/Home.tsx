@@ -27,6 +27,7 @@ const HomePage = () => {
 			<div>
 				<div>
 					<Chip text='react' before='1' />
+					<Chip text='react' />
 					<Chip square text='preact' />
 					<Chip text='Idk' before='1' hideCloseBtn={true} />
 					<Chip text='important tag' hideCloseBtn={true} />

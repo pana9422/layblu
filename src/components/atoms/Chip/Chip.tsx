@@ -16,8 +16,6 @@ export const Chip = ({
 		<div
 			className={`${design} ${padding} bg-${bgColor} inline-flex gap-1 ${fontWeight} capitalize`}
 		>
-			{before === false && null}
-
 			{typeof before === 'string' ? (
 				<span
 					className={`${design} bg-${color} w-6 h-6 flex items-center justify-center`}
@@ -30,8 +28,8 @@ export const Chip = ({
 
 			<span className={`text-${color}`}>{text}</span>
 
-			{hideCloseBtn === false && (
-				<button className={`${design}`}>
+			{!hideCloseBtn && (
+				<button className={design}>
 					<svg
 						className={`fill-${bgColor} bg-${color} rounded-full p-0.5`}
 						xmlns='http://www.w3.org/2000/svg'

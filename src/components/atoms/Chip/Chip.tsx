@@ -1,4 +1,3 @@
-import { useRef } from 'react'
 import { Props } from './types'
 
 export const Chip = ({
@@ -8,19 +7,15 @@ export const Chip = ({
 	text,
 	fontWeight = 'font-bold',
 	before,
-	hideCloseBtn = false,
 	close,
 	checked = false,
 }: Props) => {
-	const chipRef = useRef<HTMLDivElement>(null)
-
 	const padding = `${before === undefined ? 'pl-2' : ''} pr-2`
 	const design = square ? 'rounded' : 'rounded-full'
 	const opacity = checked ? '' : 'opacity-80'
 
 	return (
 		<div
-			ref={chipRef}
 			className={`${design} ${padding} bg-${bgColor} ${fontWeight} ${opacity} inline-flex gap-1 capitalize cursor-pointer`}
 		>
 			{typeof before === 'string' ? (
@@ -35,7 +30,7 @@ export const Chip = ({
 
 			<span className={`text-${color}`}>{text}</span>
 
-			{!hideCloseBtn && (
+			{close !== undefined && (
 				<button className={design} onClick={close}>
 					<svg
 						className={`fill-${bgColor} bg-${color} rounded-full p-0.5`}

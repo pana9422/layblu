@@ -1,7 +1,7 @@
 import { faGlobe } from '@fortawesome/free-solid-svg-icons'
 import { t } from '@/i18n'
 import { IHome } from '@/i18n/types'
-import { useContext } from 'react'
+import { useContext, useState } from 'react'
 import { PreferenceContext } from '@/context/Preferences'
 import { useFecth } from '@/hooks/useFetch'
 import { Icon, Avatar, Chip } from '@/components/atoms'
@@ -16,6 +16,9 @@ const HomePage = () => {
 	const { state } = useContext(PreferenceContext)
 	const { data, loading } = useFecth<IUser[]>({ path: 'users' })
 	const users = data ?? []
+
+	const [visible, setVisible] = useState(true)
+
 	return (
 		<div
 			className={
@@ -26,7 +29,13 @@ const HomePage = () => {
 			<h1 className='text-4xl'>{title}</h1>
 			<div>
 				<div>
-					<Chip text='react' before='100000' />
+					{visible && (
+						<Chip
+							text='react'
+							before='100000'
+							close={() => setVisible(!visible)}
+						/>
+					)}
 					<Chip text='react' />
 					<Chip square text='preact' />
 					<Chip text='Idk' before='1' hideCloseBtn={true} />

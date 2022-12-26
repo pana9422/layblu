@@ -6,4 +6,5 @@ export interface Props {
 	square?: boolean
 	color?: string
 	bgColor?: string
+	checked?: boolean
 }

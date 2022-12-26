@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { Props } from './types'
 
 export const Chip = ({
@@ -8,17 +9,31 @@ export const Chip = ({
 	fontWeight = 'font-bold',
 	before = false,
 	hideCloseBtn = false,
+	checked = false,
 }: Props) => {
+	const chipRef = useRef<HTMLDivElement>(null)
+
 	const padding = `${before === false ? 'pl-2' : ''} pr-2`
 	const design = square ? 'rounded' : 'rounded-full'
+	const opacity = checked ? 'opacity-80' : ''
+
+	const hideChip = () => {
+		chipRef.current!.classList.add('hidden')
+	}
+
+	const checkChip = () => {
+		chipRef.current!.classList.toggle('opacity-80')
+	}
 
 	return (
 		<div
-			className={`${design} ${padding} bg-${bgColor} inline-flex gap-1 ${fontWeight} capitalize`}
+			ref={chipRef}
+			onClick={checkChip}
+			className={`${design} ${padding} bg-${bgColor} ${fontWeight} ${opacity} inline-flex gap-1 capitalize cursor-pointer`}
 		>
 			{typeof before === 'string' ? (
 				<span
-					className={`${design} bg-${color} w-6 h-6 flex items-center justify-center`}
+					className={`${design} bg-${color} w-6 h-6 flex items-center justify-center min-w-min px-1`}
 				>
 					{before}
 				</span>
@@ -29,7 +44,7 @@ export const Chip = ({
 			<span className={`text-${color}`}>{text}</span>
 
 			{!hideCloseBtn && (
-				<button className={design}>
+				<button className={design} onClick={hideChip}>
 					<svg
 						className={`fill-${bgColor} bg-${color} rounded-full p-0.5`}
 						xmlns='http://www.w3.org/2000/svg'

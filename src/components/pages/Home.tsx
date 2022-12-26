@@ -38,8 +38,8 @@ const HomePage = () => {
 					)}
 					<Chip text='react' />
 					<Chip square text='preact' />
-					<Chip text='Idk' before='1' hideCloseBtn={true} />
-					<Chip text='important tag' hideCloseBtn={true} />
+					<Chip text='Idk' before='1' />
+					<Chip text='important tag' />
 					<Chip
 						text='weird'
 						before={

@@ -6,5 +6,5 @@ export interface Props {
 	color?: string
 	bgColor?: string
 	checked?: boolean
-	close?: () => void
+	onClose?: () => void
 }

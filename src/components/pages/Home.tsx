@@ -25,7 +25,7 @@ const HomePage = () => {
 						<Chip
 							text='react'
 							before='100000'
-							close={() => setVisible(!visible)}
+							onClose={() => setVisible(!visible)}
 						/>
 					)}
 
@@ -45,6 +45,7 @@ const HomePage = () => {
 								size={6}
 							/>
 						}
+						onClose={() => {}}
 					/>
 				</div>
 			</div>

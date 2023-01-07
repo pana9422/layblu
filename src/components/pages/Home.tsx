@@ -31,21 +31,15 @@ const HomePage = () => {
 
 					<IosShare width={48} height={48} fill='blue' />
 					<Checkbox width={48} height={48} fill='red' />
-
-					<Chip
-						text='weird'
-						before={
-							<Avatar
-								type='rounded-full'
-								content={{
-									type: 'icon',
-									data: <Checkbox width={48} height={48} fill='red' />,
-								}}
-								bgColor='blue-100'
-								size={6}
-							/>
-						}
-						onClose={() => {}}
+					<Avatar
+						square
+						username='Miguel J Medina'
+						fontSize='xl'
+						numberOfLetters={3}
+					/>
+					<Avatar
+						imgSrc='https://picsum.photos/seed/picsum/400/300'
+						size={20}
 					/>
 				</div>
 			</div>

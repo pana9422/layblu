@@ -1,20 +1,11 @@
-type TAvatarTypes = 'rounded-full' | 'rounded-none' | 'rounded'
-
-type Content =
-	| {
-			type: 'img' | 'text'
-			data: string
-	  }
-	| {
-			type: 'icon'
-			data: JSX.Element
-	  }
-
 export interface Props {
-	type: TAvatarTypes
+	square?: boolean
 	size?: number
 	numberOfLetters?: number
-	content: Content
+	imgSrc?: string
+	username?: string
 	bgColor?: string
+	color?: string
 	fontSize?: string
+	fontWeight?: boolean
 }

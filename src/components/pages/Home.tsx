@@ -1,10 +1,14 @@
-import { faGlobe } from '@fortawesome/free-solid-svg-icons'
+import {
+	faGlobe,
+	faArrowRight,
+	faAngleRight,
+} from '@fortawesome/free-solid-svg-icons'
 import { t } from '@/i18n'
 import { IHome } from '@/i18n/types'
 import { useContext, useState } from 'react'
 import { PreferenceContext } from '@/context/Preferences'
 import { useFecth } from '@/hooks/useFetch'
-import { Icon, Avatar, Chip } from '@/components/atoms'
+import { Button, Icon, Avatar, Chip } from '@/components/atoms'
 import { EIcon } from '@/types'
 
 interface IUser {
@@ -27,7 +31,34 @@ const HomePage = () => {
 			}
 		>
 			<h1 className='text-4xl'>{title}</h1>
+
 			<div>
+				<Button
+					label='flat'
+					design='flat'
+					rightIcon={<Icon icon={faArrowRight} />}
+				/>
+				<Button label='outline' design='outline' />
+				<Button
+					label='solid'
+					leftIcon={<Icon icon={faGlobe} />}
+					rightIcon={<Icon icon={faAngleRight} />}
+				/>
+				<Button
+					label='solid'
+					leftIcon={<Icon icon={faGlobe} />}
+					rightIcon={<Icon icon={faAngleRight} />}
+					typeDense
+				/>
+				<Button
+					label='outline'
+					design='outline'
+					leftIcon={<Icon icon={faGlobe} />}
+					rightIcon={<Icon icon={faAngleRight} />}
+					labelPosition='left'
+					square
+				/>
+				<Button label={<Icon icon={faGlobe} />} square />
 				<div>
 					{visible && (
 						<Chip

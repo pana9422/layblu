@@ -11,5 +11,7 @@ module.exports = {
 		{ pattern: /h-\d+/ },
 		{ pattern: /text-\w+/ },
 		{ pattern: /fill-\w+/ },
+		{ pattern: /border-\w+/ },
+		{ pattern: /hover\:[\S]+/ },
 	],
 }

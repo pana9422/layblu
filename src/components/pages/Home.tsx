@@ -1,17 +1,9 @@
-import {
-	faGlobe,
-	faArrowRight,
-	faAngleRight,
-} from '@fortawesome/free-solid-svg-icons'
 import { t } from '@/i18n'
 import { IHome } from '@/i18n/types'
 import { useContext, useState } from 'react'
 import { PreferenceContext } from '@/context/Preferences'
-import { useFecth } from '@/hooks/useFetch'
-import { Button, Icon, Avatar, Chip } from '@/components/atoms'
-import { EIcon } from '@/types'
-import { Checkbox, IosShare } from '@/components/atoms/Icon'
-
+import { Button, Avatar, Chip } from '@/components/atoms'
+import { Checkbox, IosShare, Close } from '@/components/atoms/Icon'
 
 const HomePage = () => {
 	const { title } = t<IHome>('home')
@@ -29,25 +21,22 @@ const HomePage = () => {
 			<h1 className='text-4xl'>{title}</h1>
 
 			<div>
-				<Button flat>
-					flat
-					<Icon icon={faArrowRight} />
-				</Button>
+				<Button flat>flat</Button>
 				<Button>
-					<Icon icon={faGlobe} />
 					<span className='text-left'>Bunt</span>
+					<Checkbox width={20} height={20} fill='white' />
 				</Button>
 				<Button dense>
-					<Icon icon={faGlobe} /> Dense
-					<Icon icon={faAngleRight} />
+					<Checkbox width={20} height={20} fill='white' />
+					Dense
+					<Close width={20} height={20} fill='white' />
 				</Button>
 				<Button outline square>
-					<Icon icon={faGlobe} />
+					<Checkbox width={20} height={20} fill='white' />
 					<span className='w-16 text-left'>Outline</span>
-					<Icon icon={faAngleRight} />
 				</Button>
 				<Button square>
-					<Icon icon={faGlobe} />
+					<Close width={26} height={26} fill='white' />
 				</Button>
 				<div>
 					{visible && (

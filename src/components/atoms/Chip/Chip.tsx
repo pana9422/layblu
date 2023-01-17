@@ -1,4 +1,5 @@
 import { Props } from './types'
+import { Close } from '@/components/atoms/Icon'
 
 export const Chip = ({
 	square = false,
@@ -7,7 +8,7 @@ export const Chip = ({
 	text,
 	fontWeight = 'font-bold',
 	before,
-	close,
+	onClose,
 	checked = false,
 }: Props) => {
 	const padding = `${before === undefined ? 'pl-2' : ''} pr-2`
@@ -30,17 +31,13 @@ export const Chip = ({
 
 			<span className={`text-${color}`}>{text}</span>
 
-			{close !== undefined && (
-				<button className={design} onClick={close}>
-					<svg
+			{onClose !== undefined && (
+				<button className={design} onClick={onClose}>
+					<Close
+						width={16}
+						height={16}
 						className={`fill-${bgColor} bg-${color} rounded-full p-0.5`}
-						xmlns='http://www.w3.org/2000/svg'
-						height='16'
-						width='16'
-						viewBox='0 0 48 48'
-					>
-						<path d='m24 27.3-9.9 9.9q-.7.7-1.65.7t-1.65-.7q-.7-.7-.7-1.65t.7-1.65l9.9-9.9-9.9-9.9q-.7-.7-.7-1.65t.7-1.65q.7-.7 1.65-.7t1.65.7l9.9 9.9 9.9-9.9q.7-.7 1.65-.7t1.65.7q.7.7.7 1.65t-.7 1.65L27.3 24l9.9 9.9q.7.7.7 1.65t-.7 1.65q-.7.7-1.65.7t-1.65-.7Z' />
-					</svg>
+					/>
 				</button>
 			)}
 		</div>

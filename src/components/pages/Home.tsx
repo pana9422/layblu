@@ -10,16 +10,12 @@ import { PreferenceContext } from '@/context/Preferences'
 import { useFecth } from '@/hooks/useFetch'
 import { Button, Icon, Avatar, Chip } from '@/components/atoms'
 import { EIcon } from '@/types'
+import { Checkbox, IosShare } from '@/components/atoms/Icon'
 
-interface IUser {
-	id: string
-	name: string
-}
+
 const HomePage = () => {
 	const { title } = t<IHome>('home')
 	const { state } = useContext(PreferenceContext)
-	const { data, loading } = useFecth<IUser[]>({ path: 'users' })
-	const users = data ?? []
 
 	const [visible, setVisible] = useState(true)
 
@@ -58,76 +54,23 @@ const HomePage = () => {
 						<Chip
 							text='react'
 							before='100000'
-							close={() => setVisible(!visible)}
+							onClose={() => setVisible(!visible)}
 						/>
 					)}
-					<Chip text='react' />
-					<Chip square text='preact' />
-					<Chip text='Idk' before='1' />
-					<Chip text='important tag' />
-					<Chip
-						text='weird'
-						before={
-							<Avatar
-								type='rounded-full'
-								content={{
-									type: 'icon',
-									data: <Icon icon={faGlobe} size='xl' color='green' />,
-								}}
-								bgColor='blue-100'
-								size={6}
-							/>
-						}
+
+					<IosShare width={48} height={48} fill='blue' />
+					<Checkbox width={48} height={48} fill='red' />
+					<Avatar
+						square
+						username='Miguel J Medina'
+						fontSize='xl'
+						numberOfLetters={3}
+					/>
+					<Avatar
+						imgSrc='https://picsum.photos/seed/picsum/400/300'
+						size={20}
 					/>
 				</div>
-				<Icon icon={faGlobe} size='4x' color='red' />
-				<Icon svg={EIcon.IosShare} color='blue' size='30' />
-
-				<Avatar
-					type='rounded'
-					size={14}
-					bgColor='teal-500'
-					content={{
-						type: 'icon',
-						data: <Icon icon={faGlobe} size='xl' color='green' />,
-					}}
-				/>
-
-				<Avatar
-					type='rounded-full'
-					content={{
-						type: 'text',
-						data: 'this is a long name',
-					}}
-					numberOfLetters={3}
-					bgColor='red-500'
-					size={14}
-					fontSize='xl'
-				/>
-				<Avatar
-					type='rounded'
-					content={{
-						type: 'img',
-						data: 'https://gravatar.com/avatar/d82a570e652035daf948801b94eb0140?s=200&d=robohash&r=g',
-					}}
-					bgColor='green-600'
-					size={14}
-				/>
-
-				<Avatar
-					type='rounded-none'
-					content={{
-						type: 'img',
-						data: 'https://picsum.photos/200',
-					}}
-					bgColor='blue-100'
-					size={20}
-				/>
-				<ul>
-					{loading
-						? 'Loading...'
-						: users.map(item => <li key={item.id}> {item.name} </li>)}
-				</ul>
 			</div>
 		</div>
 	)

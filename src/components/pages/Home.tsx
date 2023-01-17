@@ -33,32 +33,26 @@ const HomePage = () => {
 			<h1 className='text-4xl'>{title}</h1>
 
 			<div>
-				<Button
-					label='flat'
-					design='flat'
-					rightIcon={<Icon icon={faArrowRight} />}
-				/>
-				<Button label='outline' design='outline' />
-				<Button
-					label='solid'
-					leftIcon={<Icon icon={faGlobe} />}
-					rightIcon={<Icon icon={faAngleRight} />}
-				/>
-				<Button
-					label='solid'
-					leftIcon={<Icon icon={faGlobe} />}
-					rightIcon={<Icon icon={faAngleRight} />}
-					typeDense
-				/>
-				<Button
-					label='outline'
-					design='outline'
-					leftIcon={<Icon icon={faGlobe} />}
-					rightIcon={<Icon icon={faAngleRight} />}
-					labelPosition='left'
-					square
-				/>
-				<Button label={<Icon icon={faGlobe} />} square />
+				<Button flat>
+					flat
+					<Icon icon={faArrowRight} />
+				</Button>
+				<Button>
+					<Icon icon={faGlobe} />
+					<span className='text-left'>Bunt</span>
+				</Button>
+				<Button dense>
+					<Icon icon={faGlobe} /> Dense
+					<Icon icon={faAngleRight} />
+				</Button>
+				<Button outline square>
+					<Icon icon={faGlobe} />
+					<span className='w-16 text-left'>Outline</span>
+					<Icon icon={faAngleRight} />
+				</Button>
+				<Button square>
+					<Icon icon={faGlobe} />
+				</Button>
 				<div>
 					{visible && (
 						<Chip

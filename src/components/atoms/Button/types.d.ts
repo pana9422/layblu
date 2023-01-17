@@ -1,13 +1,16 @@
 export interface IButtonProps {
-	label: string | Jsx.Element
-	labelPosition?: 'center' | 'left' | 'right'
+	children: React.ReactNode
+
 	onClick?: () => void
-	design?: 'outline' | 'solid' | 'flat'
-	square?: boolean
+
 	bgColor?: string
 	color?: string
 	borderColor?: string
-	leftIcon?: Jsx.Element
-	rightIcon?: Jsx.Element
-	typeDense?: boolean
+
+	dense?: boolean
+
+	square?: boolean
+
+	flat?: boolean
+	outline?: boolean
 }

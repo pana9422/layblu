@@ -35,9 +35,13 @@ const HomePage = () => {
 					<Checkbox width={20} height={20} fill='white' />
 					<span className='w-16 text-left'>Outline</span>
 				</Button>
-				<Button square>
+				<Button square size={10}>
 					<Close width={26} height={26} fill='white' />
 				</Button>
+				<Button square size={11} outline>
+					<Checkbox width={26} height={26} fill='white' />
+				</Button>
+
 				<div>
 					{visible && (
 						<Chip

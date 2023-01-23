@@ -14,5 +14,5 @@ export interface IButtonProps {
 	flat?: boolean
 	outline?: boolean
 
-	size?: number
+	size?: number | string
 }

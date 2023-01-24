@@ -2,8 +2,8 @@ import { t } from '@/i18n'
 import { IHome } from '@/i18n/types'
 import { useContext, useState } from 'react'
 import { PreferenceContext } from '@/context/Preferences'
-import { Avatar, Chip } from '@/components/atoms'
-import { Checkbox, IosShare } from '@/components/atoms/Icon'
+import { Button, Avatar, Chip } from '@/components/atoms'
+import { Checkbox, IosShare, Close } from '@/components/atoms/Icon'
 
 const HomePage = () => {
 	const { title } = t<IHome>('home')
@@ -19,7 +19,29 @@ const HomePage = () => {
 			}
 		>
 			<h1 className='text-4xl'>{title}</h1>
+
 			<div>
+				<Button flat>flat</Button>
+				<Button>
+					<span className='text-left'>Bunt</span>
+					<Checkbox width={20} height={20} fill='white' />
+				</Button>
+				<Button dense>
+					<Checkbox width={20} height={20} fill='white' />
+					Dense
+					<Close width={20} height={20} fill='white' />
+				</Button>
+				<Button outline square>
+					<Checkbox width={20} height={20} fill='white' />
+					<span className='w-16 text-left'>Outline</span>
+				</Button>
+				<Button square size={10}>
+					<Close width={26} height={26} fill='white' />
+				</Button>
+				<Button square size={11} outline>
+					<Checkbox width={26} height={26} fill='white' />
+				</Button>
+
 				<div>
 					{visible && (
 						<Chip

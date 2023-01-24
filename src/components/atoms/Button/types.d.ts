@@ -1,6 +1,18 @@
 export interface IButtonProps {
-	label: string
+	children: React.ReactNode
+
 	onClick?: () => void
-	imgSrc?: string
-	active?: boolean
+
+	bgColor?: string
+	color?: string
+	borderColor?: string
+
+	dense?: boolean
+
+	square?: boolean
+
+	flat?: boolean
+	outline?: boolean
+
+	size?: number | string
 }

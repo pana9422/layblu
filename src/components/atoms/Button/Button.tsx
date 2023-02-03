@@ -9,13 +9,13 @@ export const Button = ({
 	bgColor = 'emerald-600',
 	color = 'emerald-50',
 	borderColor = 'emerald-700',
+	hover = 'hover:bg-emerald-600/[0.2]',
 	dense = false,
 	size = 0,
 }: IButtonProps) => {
 	const borderRadius = square ? 'rounded' : 'rounded-full'
-	const dimensions = (size !== 0) ? `w-${size} h-${size}` : 'w-auto'
-	const justifyContent = (size !== 0) ? 'justify-center' : 'justify-between'
-	let hover = 'hover:bg-gray-500/[0.2]'
+	const dimensions = size !== 0 ? `w-${size} h-${size}` : 'w-auto'
+	const justifyContent = size !== 0 ? 'justify-center' : 'justify-between'
 	let padding = dense ? 'px-1.5 py-0.5' : 'py-1.5 px-3'
 	let style = `text-${color}`
 

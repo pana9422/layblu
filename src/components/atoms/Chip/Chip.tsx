@@ -1,5 +1,5 @@
 import { Props } from './types'
-import { Close } from '@/components/atoms/Icon'
+import { Close } from '../../atoms/index'
 
 export const Chip = ({
 	square = false,

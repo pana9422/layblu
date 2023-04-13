@@ -10,7 +10,7 @@ export interface IButtonProps {
 
 	dense?: boolean
 
-	square?: boolean
+	rounded?: boolean
 
 	flat?: boolean
 	outline?: boolean

@@ -1,25 +1,19 @@
 import { Chip } from './Chip'
-import { ComponentMeta, ComponentStory } from '@storybook/react'
+import { Meta, StoryObj } from '@storybook/react'
 
-const main: ComponentMeta<typeof Chip> = {
+const meta: Meta<typeof Chip> = {
 	component: Chip,
-	argTypes: {
-		before: { control: 'select', options: ['1', '2', '3'] },
-	},
 }
 
-export default main
+export default meta
+type Story = StoryObj<typeof Chip>
 
-const Template: ComponentStory<typeof Chip> = args => <Chip {...args} />
+export const Default: Story = { args: { text: 'default', before: '1' } }
 
-export const Default = Template.bind({})
-Default.args = { text: 'default', before: '1' }
+export const WithoutIcon: Story = { args: { text: 'Without icon' } }
 
-export const WithoutIcon = Template.bind({})
-WithoutIcon.args = { text: 'Without icon' }
+export const WithIcon: Story = {
+	args: { text: 'With icon', before: '2', onClose: undefined },
+}
 
-export const WithIcon = Template.bind({})
-WithIcon.args = { text: 'With Icon', before: '2', onClose: undefined }
-
-export const Simple = Template.bind({})
-Simple.args = { text: 'simple', onClose: undefined }
+export const Simple: Story = { args: { text: 'Simple', onClose: undefined } }

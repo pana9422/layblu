@@ -32,7 +32,7 @@ export const Avatar = ({
 			className={`flex justify-center items-center overflow-hidden ${type} w-${size} h-${size} bg-${bgColor} text-${color} ${font} ${fw}`}
 		>
 			{icon ?? text}
-			{imgSrc && (
+			{imgSrc !== undefined && (
 				<img src={imgSrc} className={`object-cover w-${size} h-${size}`} />
 			)}
 		</div>

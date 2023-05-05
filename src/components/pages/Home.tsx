@@ -31,14 +31,14 @@ const HomePage = () => {
 					Dense
 					<Close width={20} height={20} fill='white' />
 				</Button>
-				<Button outline square>
+				<Button outline rounded>
 					<Checkbox width={20} height={20} fill='white' />
 					<span className='w-16 text-left'>Outline</span>
 				</Button>
-				<Button square size={10}>
+				<Button rounded size={10}>
 					<Close width={26} height={26} fill='white' />
 				</Button>
-				<Button square size={11} outline>
+				<Button rounded size={11} outline>
 					<Checkbox width={26} height={26} fill='white' />
 				</Button>
 

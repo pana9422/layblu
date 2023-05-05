@@ -9,8 +9,6 @@ const getNameInitials = (data: string, numberOfLetters = 2) => {
 	return dividedString.join('').slice(0, numberOfLetters).toUpperCase()
 }
 
-/* --------- */
-
 export const Avatar = ({
 	square = false,
 	size = 14,
@@ -19,8 +17,9 @@ export const Avatar = ({
 	bgColor = 'blue-600',
 	color = 'blue-100',
 	fontSize,
-	numberOfLetters,
+	numberOfLetters = 2,
 	fontWeight = false,
+	icon,
 }: Props) => {
 	const font = fontSize !== undefined ? `text-${fontSize}` : ''
 	const text =
@@ -32,7 +31,8 @@ export const Avatar = ({
 		<div
 			className={`flex justify-center items-center overflow-hidden ${type} w-${size} h-${size} bg-${bgColor} text-${color} ${font} ${fw}`}
 		>
-			{text ?? (
+			{icon ?? text}
+			{imgSrc && (
 				<img src={imgSrc} className={`object-cover w-${size} h-${size}`} />
 			)}
 		</div>

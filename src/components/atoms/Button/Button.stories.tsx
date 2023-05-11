@@ -1,21 +1,110 @@
-import { Button } from "./Button";
+import { Button } from './Button'
+import { Close } from '../Icon'
 
-import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { Meta, StoryObj } from '@storybook/react'
 
-export default {
-	title: "Button",
+const meta: Meta<typeof Button> = {
 	component: Button,
-} as ComponentMeta<typeof Button>;
+	argTypes: {
+		onClick: {
+			control: 'event',
+			description:
+				'Callback function to declare what to do in the onclick event',
+			table: {
+				category: 'Events',
+			},
+		},
+		outline: {
+			description: 'Set the outline style',
+			table: {
+				category: 'Styles',
+			},
+		},
+		flat: {
+			description: 'Set only text button style',
+			table: {
+				category: 'Styles',
+			},
+		},
+		children: {
+			description: 'React node or text',
+			table: {
+				category: 'React Node',
+				type: {
+					summary: 'string',
+					category: 'Text',
+				},
+			},
+		},
+		color: {
+			control: { type: 'text' },
+			description: 'Tailwind color class',
+			table: {
+				category: 'Color',
+			},
+		},
+		bgColor: {
+			control: { type: 'text' },
+			description: 'Tailwind background color class',
+			table: {
+				category: 'Color',
+			},
+		},
+		borderColor: {
+			control: { type: 'text' },
+			description: 'Tailwind border color class',
+			table: {
+				category: 'Color',
+			},
+		},
+		hover: {
+			description: 'Tailwind hover class',
+			table: {
+				category: 'Color',
+			},
+		},
+		dense: {
+			description: 'Reduces the padding',
+			table: {
+				category: 'Sizes',
+			},
+		},
 
-const Template: ComponentStory<typeof Button> = (args) => (
-	<Button {...args}>Default</Button>
-);
+		rounded: {
+			description: 'Rounded border to the button',
+			table: {
+				category: 'Styles',
+			},
+		},
 
-export const Default = Template.bind({});
-Default.args = { square: true };
+		size: {
+			control: 'number',
+			description:
+				'Make the size of the button proportional. Use sizes defined in Tailwind',
+			table: {
+				type: { summary: 'string' },
+				category: 'Sizes',
+			},
+		},
+	},
+}
 
-export const Outline = Template.bind({});
-Outline.args = { outline: true };
+export default meta
+type Story = StoryObj<typeof Button>
 
-export const Text = Template.bind({});
-Text.args = { flat: true };
+export const Default: Story = { args: { children: 'default' } }
+
+export const Outline: Story = { args: { outline: true, children: 'outline' } }
+
+export const Text: Story = { args: { children: 'text', flat: true } }
+
+export const Dense: Story = {
+	args: {
+		dense: true,
+	},
+	render: args => (
+		<Button {...args}>
+			Dense <Close width={20} height={20} fill='white' />
+		</Button>
+	),
+}

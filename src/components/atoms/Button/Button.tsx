@@ -5,7 +5,7 @@ export const Button = ({
 	outline = false,
 	flat = false,
 	children,
-	square = false,
+	rounded = true,
 	bgColor = 'emerald-600',
 	color = 'emerald-50',
 	borderColor = 'emerald-700',
@@ -13,7 +13,7 @@ export const Button = ({
 	dense = false,
 	size = 0,
 }: IButtonProps) => {
-	const borderRadius = square ? 'rounded' : 'rounded-full'
+	const borderRadius = rounded ? 'rounded' : 'rounded-full'
 	const dimensions = size !== 0 ? `w-${size} h-${size}` : 'w-auto'
 	const justifyContent = size !== 0 ? 'justify-center' : 'justify-between'
 	let padding = dense ? 'px-1.5 py-0.5' : 'py-1.5 px-3'

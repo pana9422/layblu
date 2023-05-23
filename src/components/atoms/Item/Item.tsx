@@ -2,7 +2,7 @@ import { Props } from './types'
 
 export const Item = ({
 	icon,
-	txt,
+	label,
 	before,
 	horizontalHoverLine = false,
 	color = 'indigo-800',
@@ -20,7 +20,7 @@ export const Item = ({
 	return (
 		<li className={listClass}>
 			{icon}
-			<span className={textClass}>{txt}</span>
+			<span className={textClass}>{label}</span>
 			{Boolean(before) && <span className={beforeClass}>{before}</span>}
 		</li>
 	)

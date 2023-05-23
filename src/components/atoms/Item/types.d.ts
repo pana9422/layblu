@@ -1,7 +1,7 @@
 export interface Props {
 	icon?: JSX.Element
-	txt: string
-	before?: string
+	label: string
+	before?: string | number
 	horizontalHoverLine?: boolean
 
 	color?: string

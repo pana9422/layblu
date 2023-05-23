@@ -12,13 +12,18 @@ const meta: Meta = {
 				category: 'React node',
 			},
 		},
-		txt: {
+		label: {
 			description: 'Text that describes the item',
 			table: { category: 'Text' },
 		},
 		before: {
-			description: 'String to indicate a visual state',
-			table: { category: 'Text' },
+			description: 'String or number to indicate a visual state',
+			table: {
+				category: 'Text',
+				type: {
+					summary: 'string | number',
+				},
+			},
 		},
 		horizontalHoverLine: {
 			description: 'Stablish the look on hover',
@@ -44,20 +49,27 @@ type Story = StoryObj<typeof Item>
 
 export const Default: Story = {
 	args: {
-		txt: 'Label item',
+		label: 'Label item',
 	},
 }
 
 export const WithBefore: Story = {
 	args: {
-		txt: 'With before',
+		label: 'With before',
 		before: '1',
+	},
+}
+
+export const WithIcon: Story = {
+	args: {
+		label: 'With icon',
+		icon: <Checkbox fill='#1C558B' width={30} height={30} />,
 	},
 }
 
 export const Full: Story = {
 	args: {
-		txt: 'Full label',
+		label: 'Full label',
 		before: '2',
 		icon: <Checkbox fill='#1C558B' width={30} height={30} />,
 	},
@@ -65,7 +77,7 @@ export const Full: Story = {
 
 export const HorizontalLineOnHover: Story = {
 	args: {
-		txt: 'Hover me',
+		label: 'Hover me',
 		before: '3',
 		horizontalHoverLine: true,
 	},

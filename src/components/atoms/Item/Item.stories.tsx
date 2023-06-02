@@ -17,6 +17,7 @@ const meta: Meta = {
 			table: { category: 'Text' },
 		},
 		before: {
+			control: 'text',
 			description: 'String or number to indicate a visual state',
 			table: {
 				category: 'Text',
@@ -25,6 +26,31 @@ const meta: Meta = {
 				},
 			},
 		},
+		path: {
+			control: 'text',
+			description:
+				'String defining the location in the url it points to, this is compared with the useLocation hook and the result defines the active state',
+			table: { category: 'Text' },
+		},
+
+		active: {
+			control: 'boolean',
+			description: 'Defines the a visual active state',
+			table: { category: 'Design' },
+		},
+
+		activeColor: {
+			description: 'Set the Tailwind color string when the Item is active',
+			table: { category: 'Color' },
+			control: 'color',
+		},
+
+		onClick: {
+			description: 'On click event',
+			table: { category: 'Events' },
+			control: 'event',
+		},
+
 		horizontalHoverLine: {
 			description: 'Stablish the look on hover',
 			table: { category: 'Design' },
@@ -80,6 +106,14 @@ export const HorizontalLineOnHover: Story = {
 		label: 'Hover me',
 		before: '3',
 		horizontalHoverLine: true,
+	},
+}
+
+export const Active: Story = {
+	args: {
+		label: 'Active',
+		before: 'new',
+		active: true,
 	},
 }
 

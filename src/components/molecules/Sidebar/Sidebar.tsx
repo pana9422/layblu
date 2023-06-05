@@ -1,7 +1,7 @@
-import { ReactNode } from 'react'
+import React from 'react'
 
 interface Props {
-	children: ReactNode
+	children: React.ReactNode | React.ReactNode[]
 }
 
 export const Sidebar: React.FC<Props> = ({ children }) => {

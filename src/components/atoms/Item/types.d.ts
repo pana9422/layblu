@@ -4,7 +4,7 @@ export interface Props {
 	before?: string | number
 	horizontalHoverLine?: boolean
 
-	active?: bolean
+	active?: boolean
 	path?: string
 	color?: string
 	activeColor?: string

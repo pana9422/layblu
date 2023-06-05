@@ -16,7 +16,7 @@ export const Item = ({
 }: Props) => {
 	const [location] = useLocation()
 
-	const activeState = active || location === path ? true : false
+	const activeState = active || location === path
 	const hoverLine = horizontalHoverLine ? `border-b-2` : `border-l-2`
 
 	const activeBg = activeState ? `bg-${activeColor}` : ''

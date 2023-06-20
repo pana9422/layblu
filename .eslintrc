@@ -35,6 +35,7 @@
 	],
 	"plugins": ["react", "@typescript-eslint"],
 	"rules": {
+		"react/prop-types": "off",
 		"@typescript-eslint/explicit-function-return-type": "off",
 		"@typescript-eslint/strict-boolean-expressions": "warn"
 	}

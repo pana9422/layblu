@@ -4,6 +4,7 @@ export interface PropsImg {
 	maxWidth?: `max-w-${string}`
 	fit?: `object-${string}`
 	bgColor?: `bg-${string}`
+	borderRadius?: `rounded-${string}`
 
 	alt?: string
 	src: string

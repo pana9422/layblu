@@ -8,6 +8,7 @@ const Img: React.FC<PropsImg> = ({
 	maxWidth = 'max-w-full',
 	fit = 'object-contain',
 	bgColor = 'bg-slate-500',
+	borderRadius = 'rounded-none',
 	alt = '',
 	src,
 	placeholderSrc = 'https://cdn-icons-png.flaticon.com/128/3342/3342137.png',
@@ -30,7 +31,7 @@ const Img: React.FC<PropsImg> = ({
 
 	return (
 		<div
-			className={` relative overflow-hidden ${bgColor} ${aspecRatio} ${width} ${maxWidth}`}
+			className={` relative overflow-hidden ${borderRadius} ${bgColor} ${aspecRatio} ${width} ${maxWidth}`}
 		>
 			{loading && (
 				<div className='flex justify-center items-center h-full w-full absolute text-slate-50'>

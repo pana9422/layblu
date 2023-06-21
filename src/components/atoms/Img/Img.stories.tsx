@@ -13,7 +13,8 @@ export const Default: Story = {
 	args: {
 		aspecRatio: 'aspect-[4/3]',
 		src: 'https://layblu-ui.vercel.app/assets/image/user-10.jpg',
-		maxWidth: 'max-w-[300px]',
+		maxWidth: 'max-w-[500px]',
+		fit: 'object-cover',
 	},
 }
 

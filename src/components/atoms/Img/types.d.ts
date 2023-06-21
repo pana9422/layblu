@@ -1,6 +1,8 @@
 export interface PropsImg {
 	aspecRatio?: `aspect-[${number}/${number}]`
-	maxWidth: `max-w-[${number}${'px' | '%'}]`
+	width?: `w-${string}`
+	maxWidth?: `max-w-${string}`
+	fit?: `object-${string}`
 
 	alt?: string
 	src: string

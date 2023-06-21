@@ -3,16 +3,18 @@ import { PropsImg } from './types'
 import { Loader } from '../Icon'
 
 const Img: React.FC<PropsImg> = ({
-	aspecRatio = '1',
-	maxWidth = 'max-w-[200px]',
-	alt,
+	aspecRatio = 'aspect-[1/1]',
+	width = 'w-[100%]',
+	maxWidth = '',
+	fit = 'object-contain',
+	alt = '',
 	src,
 	placeholderSrc = 'https://cdn-icons-png.flaticon.com/128/3342/3342137.png',
 }) => {
 	const [imgSrc, setImgSrc] = useState(src)
 	const [loading, setLoading] = useState(true)
 
-	const handleLoaderImage = () => {
+	const handleLoadImage = () => {
 		setLoading(false)
 	}
 
@@ -27,16 +29,20 @@ const Img: React.FC<PropsImg> = ({
 
 	return (
 		<div
-			className={`flex justify-center items-center ${maxWidth}  ${aspecRatio} text-black`}
+			className={`bg-slate-500 relative overflow-hidden ${aspecRatio} ${width} ${maxWidth}`}
 		>
+			{loading && (
+				<div className='flex justify-center items-center h-full w-full absolute text-slate-50'>
+					<Loader />
+				</div>
+			)}
 			<img
 				src={imgSrc}
 				alt={alt}
-				onLoad={handleLoaderImage}
+				onLoad={handleLoadImage}
 				onError={handleErrorImage}
-				className={`object-cover w-full h-full ${aspecRatio}`}
+				className={`${fit} w-full h-full`}
 			/>
-			{loading && <Loader />}
 		</div>
 	)
 }

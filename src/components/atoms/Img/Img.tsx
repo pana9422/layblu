@@ -41,7 +41,9 @@ const Img: React.FC<PropsImg> = ({
 				alt={alt}
 				onLoad={handleLoadImage}
 				onError={handleErrorImage}
-				className={`${fit} w-full h-full`}
+				className={`w-full h-full ${fit} ${
+					loading ? 'scale-0' : 'scale-1'
+				} transition-transform`}
 			/>
 		</div>
 	)

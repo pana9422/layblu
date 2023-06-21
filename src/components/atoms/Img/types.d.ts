@@ -3,6 +3,7 @@ export interface PropsImg {
 	width?: `w-${string}`
 	maxWidth?: `max-w-${string}`
 	fit?: `object-${string}`
+	bgColor?: `bg-${string}`
 
 	alt?: string
 	src: string

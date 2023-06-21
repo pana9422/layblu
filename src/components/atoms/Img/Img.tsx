@@ -5,8 +5,9 @@ import { Loader } from '../Icon'
 const Img: React.FC<PropsImg> = ({
 	aspecRatio = 'aspect-[1/1]',
 	width = 'w-[100%]',
-	maxWidth = '',
+	maxWidth = 'max-w-full',
 	fit = 'object-contain',
+	bgColor = 'bg-slate-500',
 	alt = '',
 	src,
 	placeholderSrc = 'https://cdn-icons-png.flaticon.com/128/3342/3342137.png',
@@ -29,7 +30,7 @@ const Img: React.FC<PropsImg> = ({
 
 	return (
 		<div
-			className={`bg-slate-500 relative overflow-hidden ${aspecRatio} ${width} ${maxWidth}`}
+			className={` relative overflow-hidden ${bgColor} ${aspecRatio} ${width} ${maxWidth}`}
 		>
 			{loading && (
 				<div className='flex justify-center items-center h-full w-full absolute text-slate-50'>

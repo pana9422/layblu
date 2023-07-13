@@ -3,7 +3,7 @@ import { PropsImg } from './types'
 import { Loader } from '../Icon'
 
 const Img: React.FC<PropsImg> = ({
-	aspecRatio,
+	aspecRatio = '',
 	width = 'w-[100%]',
 	maxWidth = 'max-w-full',
 	fit = 'object-contain',
@@ -25,8 +25,6 @@ const Img: React.FC<PropsImg> = ({
 		setImgSrc(placeholderSrc)
 	}
 
-	const ratio = aspecRatio ?? ''
-
 	useEffect(() => {
 		src !== imgSrc && setLoading(true)
 		setImgSrc(src)
@@ -34,7 +32,7 @@ const Img: React.FC<PropsImg> = ({
 
 	return (
 		<div
-			className={` relative overflow-hidden ${borderRadius} ${bgColor} ${ratio} ${width} ${maxWidth}`}
+			className={` relative overflow-hidden ${borderRadius} ${bgColor} ${aspecRatio} ${width} ${maxWidth}`}
 		>
 			{loading && (
 				<div className='flex justify-center items-center h-full w-full absolute text-slate-50'>

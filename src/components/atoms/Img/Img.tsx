@@ -24,6 +24,7 @@ const Img: React.FC<PropsImg> = ({
 		setLoading(false)
 		setImgSrc(placeholderSrc)
 	}
+	const scaleImage = loading ? 'scale-0' : 'scale-1'
 
 	useEffect(() => {
 		src !== imgSrc && setLoading(true)
@@ -32,7 +33,7 @@ const Img: React.FC<PropsImg> = ({
 
 	return (
 		<div
-			className={` relative overflow-hidden ${borderRadius} ${bgColor} ${aspecRatio} ${width} ${maxWidth}`}
+			className={`relative overflow-hidden ${borderRadius} ${bgColor} ${aspecRatio} ${width} ${maxWidth}`}
 		>
 			{loading && (
 				<div className='flex justify-center items-center h-full w-full absolute text-slate-50'>
@@ -44,9 +45,7 @@ const Img: React.FC<PropsImg> = ({
 				alt={alt}
 				onLoad={handleLoadImage}
 				onError={handleErrorImage}
-				className={`w-full h-full ${fit} ${
-					loading ? 'scale-0' : 'scale-1'
-				} transition-transform`}
+				className={`w-full h-full ${fit} ${scaleImage} transition-transform`}
 			/>
 		</div>
 	)

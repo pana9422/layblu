@@ -70,7 +70,7 @@ const meta: Meta<typeof Button> = {
 			},
 		},
 
-		size: {
+		width: {
 			control: 'number',
 			description:
 				'Make the size of the button proportional. Use sizes defined in Tailwind',
@@ -107,11 +107,27 @@ export const Text: Story = {
 
 export const Dense: Story = {
 	args: {
+		...Default.args,
 		dense: true,
 	},
 	render: args => (
 		<Button {...args}>
-			Dense <Close width={20} height={20} fill='white' />
+			<div className='w-full text-left'>Dense</div>
+			<Close width={20} height={20} fill='currentColor' />
+		</Button>
+	),
+}
+
+export const Square: Story = {
+	args: {
+		...Default.args,
+		dense: true,
+		square: true,
+		width: 12,
+	},
+	render: args => (
+		<Button {...args}>
+			<Close width='50%' height='50%' fill='currentColor' />
 		</Button>
 	),
 }

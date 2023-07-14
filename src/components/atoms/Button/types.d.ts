@@ -6,13 +6,12 @@ export interface IButtonProps {
 	bgColor?: string
 	color?: string
 	hover?: string
-
 	dense?: boolean
-
+	square?: boolean
 	rounded?: boolean
 
 	flat?: boolean
 	outline?: boolean
 
-	size?: number | string
+	width?: number | string
 }

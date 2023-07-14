@@ -10,14 +10,14 @@ export const Button = ({
 	color = 'emerald-50',
 	hover = 'hover:bg-emerald-600/[0.8]',
 	dense = false,
-	size = 0,
+	width,
+	square = false,
 }: IButtonProps) => {
 	const borderRadius = rounded ? 'rounded' : 'rounded-full'
-	const dimensions = size !== 0 ? `w-${size} h-${size}` : 'w-auto'
-	const justifyContent = size !== 0 ? 'justify-center' : 'justify-between'
-	let padding = dense ? 'px-1.5 py-0.5' : 'py-1.5 px-3'
 
-	if (size !== 0) padding = 'p-0'
+	const padding = dense ? 'px-1.5 py-0.5' : 'py-1.5 px-3'
+	const dimmensions = square ? `aspect-square p-0` : padding
+	const size = typeof width === 'undefined' ? 'w-full' : `w-${width}`
 
 	let variant = `bg-${bgColor}` // => Variant default is Solid
 	if (outline) variant = `border-${color} border`
@@ -25,7 +25,7 @@ export const Button = ({
 
 	return (
 		<button
-			className={`capitalize flex transition-colors duration-200 items-center gap-x-3 text-${color} ${hover} ${padding} ${justifyContent} ${dimensions} ${borderRadius} ${variant}`}
+			className={`capitalize flex transition-colors duration-200 items-center justify-center gap-x-3 text-${color} ${size} ${hover} ${dimmensions} ${borderRadius} ${variant}`}
 			onClick={onClick}
 		>
 			{children}

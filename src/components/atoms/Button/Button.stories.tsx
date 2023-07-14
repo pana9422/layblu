@@ -50,13 +50,6 @@ const meta: Meta<typeof Button> = {
 				category: 'Color',
 			},
 		},
-		borderColor: {
-			control: { type: 'text' },
-			description: 'Tailwind border color class',
-			table: {
-				category: 'Color',
-			},
-		},
 		hover: {
 			description: 'Tailwind hover class',
 			table: {
@@ -94,9 +87,23 @@ type Story = StoryObj<typeof Button>
 
 export const Default: Story = { args: { children: 'default' } }
 
-export const Outline: Story = { args: { outline: true, children: 'outline' } }
+export const Outline: Story = {
+	args: {
+		outline: true,
+		children: 'outline',
+		color: 'emerald-500',
+		hover: 'hover:bg-emerald-500/[0.1]',
+	},
+}
 
-export const Text: Story = { args: { children: 'text', flat: true } }
+export const Text: Story = {
+	args: {
+		children: 'text',
+		flat: true,
+		color: 'emerald-500',
+		hover: 'hover:bg-emerald-500/[0.1]',
+	},
+}
 
 export const Dense: Story = {
 	args: {

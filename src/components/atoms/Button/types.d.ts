@@ -5,7 +5,6 @@ export interface IButtonProps {
 
 	bgColor?: string
 	color?: string
-	borderColor?: string
 	hover?: string
 
 	dense?: boolean

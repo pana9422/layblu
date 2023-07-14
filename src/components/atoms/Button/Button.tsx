@@ -8,8 +8,7 @@ export const Button = ({
 	rounded = true,
 	bgColor = 'emerald-600',
 	color = 'emerald-50',
-	borderColor = 'emerald-700',
-	hover = 'hover:bg-emerald-600/[0.2]',
+	hover = 'hover:bg-emerald-600/[0.8]',
 	dense = false,
 	size = 0,
 }: IButtonProps) => {
@@ -17,20 +16,16 @@ export const Button = ({
 	const dimensions = size !== 0 ? `w-${size} h-${size}` : 'w-auto'
 	const justifyContent = size !== 0 ? 'justify-center' : 'justify-between'
 	let padding = dense ? 'px-1.5 py-0.5' : 'py-1.5 px-3'
-	let style = `text-${color}`
 
 	if (size !== 0) padding = 'p-0'
 
-	if (outline) {
-		style += ` border-${borderColor} border`
-	} else if (!flat) {
-		style += ` bg-${bgColor}`
-		hover = ''
-	}
+	let variant = `bg-${bgColor}` // => Variant default is Solid
+	if (outline) variant = `border-${color} border`
+	if (flat) variant = ''
 
 	return (
 		<button
-			className={`capitalize flex items-center gap-x-3 ${hover} ${padding} ${justifyContent} ${dimensions} ${borderRadius} ${style}`}
+			className={`capitalize flex transition-colors duration-200 items-center gap-x-3 text-${color} ${hover} ${padding} ${justifyContent} ${dimensions} ${borderRadius} ${variant}`}
 			onClick={onClick}
 		>
 			{children}

@@ -7,8 +7,8 @@ export interface IButtonProps {
 	color?: string
 	hover?: string
 	dense?: boolean
+	ratio?: boolean
 	square?: boolean
-	rounded?: boolean
 
 	flat?: boolean
 	outline?: boolean

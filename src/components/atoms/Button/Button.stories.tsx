@@ -63,7 +63,7 @@ const meta: Meta<typeof Button> = {
 			},
 		},
 
-		rounded: {
+		square: {
 			description: 'Rounded border to the button',
 			table: {
 				category: 'Styles',
@@ -122,7 +122,7 @@ export const Square: Story = {
 	args: {
 		...Default.args,
 		dense: true,
-		square: true,
+		ratio: true,
 		width: 12,
 	},
 	render: args => (

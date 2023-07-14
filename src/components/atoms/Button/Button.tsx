@@ -5,18 +5,18 @@ export const Button = ({
 	outline = false,
 	flat = false,
 	children,
-	rounded = true,
+	square = false,
 	bgColor = 'emerald-600',
 	color = 'emerald-50',
 	hover = 'hover:bg-emerald-600/[0.8]',
 	dense = false,
 	width,
-	square = false,
+	ratio = false,
 }: IButtonProps) => {
-	const borderRadius = rounded ? 'rounded' : 'rounded-full'
+	const borderRadius = square ? 'rounded-full' : 'rounded'
 
 	const padding = dense ? 'px-1.5 py-0.5' : 'py-1.5 px-3'
-	const dimmensions = square ? `aspect-square p-0` : padding
+	const dimmensions = ratio ? `aspect-square p-0` : padding
 	const size = typeof width === 'undefined' ? 'w-full' : `w-${width}`
 
 	let variant = `bg-${bgColor}` // => Variant default is Solid
@@ -25,7 +25,7 @@ export const Button = ({
 
 	return (
 		<button
-			className={`capitalize flex transition-colors duration-200 items-center justify-center gap-x-3 text-${color} ${size} ${hover} ${dimmensions} ${borderRadius} ${variant}`}
+			className={`capitalize flex transition-colors duration-200 items-center active:outline-none active:ring active:ring-violet-300 justify-center gap-x-3  text-${color} ${size} ${hover} ${dimmensions} ${borderRadius} ${variant}`}
 			onClick={onClick}
 		>
 			{children}

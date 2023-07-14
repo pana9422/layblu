@@ -25,7 +25,7 @@ export const Button = ({
 
 	return (
 		<button
-			className={`capitalize flex transition-colors duration-200 items-center active:outline-none active:ring active:ring-violet-300 justify-center gap-x-3  text-${color} ${size} ${hover} ${dimmensions} ${borderRadius} ${variant}`}
+			className={`capitalize flex transition-colors duration-200 items-center justify-center gap-x-3 text-${color} ${size} ${hover} ${dimmensions} ${borderRadius} ${variant}`}
 			onClick={onClick}
 		>
 			{children}
